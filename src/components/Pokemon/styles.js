@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import palette from "../../helpers/palette";
 
 export const Container = styled.li`
   width: 340px;
@@ -6,7 +7,7 @@ export const Container = styled.li`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #b04a5a;
+  background-color: ${(props) => (props.type ? palette[props.type] : "#b44")};
   border-radius: 1rem;
   text-transform: capitalize;
   cursor: pointer;

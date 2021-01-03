@@ -8,7 +8,9 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Pokedex />
+      <main>
+        <Pokedex />
+      </main>
       <Footer />
     </div>
   );

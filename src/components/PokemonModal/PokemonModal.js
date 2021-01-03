@@ -7,12 +7,12 @@ import {
   AbsoluteDiv,
   DescriptionWrapper,
   BiologyDiv,
-  Button,
   ButtonWrapper,
 } from "./styles";
 
 const PokemonModal = ({ pokemon, setModal }) => {
   const [pokemonModal, setPokemonModal] = React.useState(null);
+  const [type, setType] = React.useState(null);
 
   React.useEffect(() => {
     async function getPokemon() {
@@ -25,17 +25,19 @@ const PokemonModal = ({ pokemon, setModal }) => {
     getPokemon();
   }, [pokemon]);
 
+  React.useEffect(() => {
+    setType(pokemonModal?.types[0].type.name);
+  }, [pokemonModal]);
+
   function handleOutsideClick(e) {
     if (e.target === e.currentTarget) setModal(null);
   }
-
-  console.log(pokemonModal);
 
   if (pokemonModal)
     return (
       <ContainerModal onClick={handleOutsideClick}>
         <WrapperModal>
-          <WrapperProfile>
+          <WrapperProfile type={type}>
             <h1>{pokemonModal.name}</h1>
             <div>
               <div>
@@ -54,10 +56,10 @@ const PokemonModal = ({ pokemon, setModal }) => {
             />
           </AbsoluteDiv>
           <DescriptionWrapper>
-            <ButtonWrapper>
-              <Button>Sobre</Button>
-              <Button>Evolução</Button>
-              <Button>Status</Button>
+            <ButtonWrapper type={type}>
+              <button>Sobre</button>
+              <button>Evolução</button>
+              <button>Status</button>
             </ButtonWrapper>
             <div>
               <h3>Descrição</h3>

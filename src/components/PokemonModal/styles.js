@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import palette from "../../helpers/palette";
 
 export const ContainerModal = styled.div`
   position: fixed;
@@ -56,7 +57,7 @@ export const BackgroundCircle = styled.div`
 export const WrapperProfile = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #7cc077;
+  background-color: ${(props) => (props.type ? palette[props.type] : "#b44")};
   padding: 1rem;
   color: white;
 
@@ -110,18 +111,18 @@ export const BiologyDiv = styled.div`
   }
 `;
 
-export const Button = styled.button`
-  background: transparent;
-  border: none;
-
-  &:hover,
-  &:focus {
-    color: #7cc077;
-  }
-`;
-
 export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  button {
+    background: transparent;
+    border: none;
+
+    &:hover,
+    &:focus {
+      color: ${(props) => (props.type ? palette[props.type] : "#b44")};
+    }
+  }
 `;
