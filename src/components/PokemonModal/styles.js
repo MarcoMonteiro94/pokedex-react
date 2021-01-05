@@ -12,7 +12,6 @@ export const ContainerModal = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  padding: 2rem calc(4rem + 15px) 2rem 4rem;
   text-align: justify;
 `;
 
@@ -62,7 +61,7 @@ export const WrapperProfile = styled.div`
   color: white;
 
   h1 {
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
   }
 
   h1,

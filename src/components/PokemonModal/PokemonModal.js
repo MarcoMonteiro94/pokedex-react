@@ -9,6 +9,7 @@ import {
   BiologyDiv,
   ButtonWrapper,
 } from "./styles";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const PokemonModal = ({ pokemon, setModal }) => {
   const [pokemonModal, setPokemonModal] = React.useState(null);
@@ -38,6 +39,10 @@ const PokemonModal = ({ pokemon, setModal }) => {
       <ContainerModal onClick={handleOutsideClick}>
         <WrapperModal>
           <WrapperProfile type={type}>
+            <FaLongArrowAltLeft
+              style={{ width: "24px", height: "24px", cursor: "pointer" }}
+              onClick={() => setModal(null)}
+            />
             <h1>{pokemonModal.name}</h1>
             <div>
               <div>

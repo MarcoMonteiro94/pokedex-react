@@ -1,5 +1,6 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, PokeWrapper } from "./styles";
+import { ReactComponent as PokeDetail } from "../../assets/pokedetail.svg";
 
 const Pokemon = ({ pokemon, setModal }) => {
   const [type, setType] = React.useState(null);
@@ -14,8 +15,14 @@ const Pokemon = ({ pokemon, setModal }) => {
 
   return (
     <Container onClick={handleClick} type={type}>
-      <p>{pokemon.name}</p>
-      <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      <PokeWrapper>
+        <p>{pokemon.name}</p>
+        <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+      </PokeWrapper>
+      <PokeDetail
+        viewBox="0 0 250 100"
+        style={{ width: "148%", height: "71%" }}
+      />
     </Container>
   );
 };
