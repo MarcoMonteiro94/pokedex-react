@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import palette from "../../helpers/palette";
+
+const loading = keyframes`
+    from {
+      transform: translate(0, 0) rotate(0);
+    }
+    to {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+`;
 
 export const ContainerModal = styled.div`
   position: fixed;
@@ -68,24 +78,28 @@ export const WrapperProfile = styled.div`
   h2 {
     text-transform: capitalize;
   }
+`;
 
-  div {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+export const WrapperTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    div {
-      display: flex;
-      justify-content: space-space-between;
-      width: 50%;
+  h2 {
+    margin: 1rem 1rem 0 0;
+  }
+`;
 
-      h2 {
-        background: rgba(255, 255, 255, 0.3);
-        padding: 0.4rem;
-        border-radius: 1rem;
-        font-size: 1.4rem;
-      }
-    }
+export const WrapperTypes = styled.div`
+  display: flex;
+  width: 60%;
+
+  h2 {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -110,7 +124,7 @@ export const BiologyDiv = styled.div`
   }
 `;
 
-export const ButtonWrapper = styled.div`
+export const NavWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -122,6 +136,19 @@ export const ButtonWrapper = styled.div`
     &:hover,
     &:focus {
       color: ${(props) => (props.type ? palette[props.type] : "#b44")};
+      outline: none;
     }
   }
+`;
+
+export const Pokeball = styled.img`
+  animation: ${loading} 2s infinite;
+`;
+
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 600px;
 `;
