@@ -13,7 +13,7 @@ import {
   Pokeball,
   LoadingContainer,
 } from "./styles";
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { MdArrowBack } from "react-icons/md";
 
 const PokemonModal = ({ pokemon, setModal }) => {
   const [pokemonModal, setPokemonModal] = React.useState(null);
@@ -54,8 +54,6 @@ const PokemonModal = ({ pokemon, setModal }) => {
     if (e.target === e.currentTarget) setModal(null);
   }
 
-  console.log(loading);
-
   if (pokemonModal)
     return (
       <ContainerModal onClick={handleOutsideClick}>
@@ -70,7 +68,7 @@ const PokemonModal = ({ pokemon, setModal }) => {
           ) : (
             <>
               <WrapperProfile type={type}>
-                <FaLongArrowAltLeft
+                <MdArrowBack
                   style={{ width: "24px", height: "24px", cursor: "pointer" }}
                   onClick={() => setModal(null)}
                 />

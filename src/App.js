@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main>
+      <main style={{ minHeight: "100vh" }}>
         <Pokedex />
       </main>
       <Footer />

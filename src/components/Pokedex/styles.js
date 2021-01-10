@@ -12,6 +12,13 @@ const loading = keyframes`
 
 export const Container = styled.div`
   display: flex;
+  flex-direction: column;
+`;
+
+export const SearchWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 0;
 `;
 
 export const PokeWrapper = styled.ul`

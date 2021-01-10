@@ -33,6 +33,11 @@ export const WrapperModal = styled.div`
   display: grid;
   grid-template-rows: 2fr 3.5fr;
   position: relative;
+
+  @media (max-width: 767px) {
+    height: 100vh;
+    width: 100vw;
+  }
 `;
 
 export const AbsoluteDiv = styled.div`
@@ -151,4 +156,9 @@ export const LoadingContainer = styled.div`
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.2);
   height: 600px;
+
+  @media (max-width: 767px) {
+    height: 100vh;
+    width: 100vw;
+  }
 `;
