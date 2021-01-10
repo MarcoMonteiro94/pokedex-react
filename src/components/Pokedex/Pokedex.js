@@ -49,6 +49,12 @@ const Pokedex = () => {
     getPokemon();
   }, [data]);
 
+  //Esconde o scroll quando o modal é aberto
+  React.useEffect(() => {
+    modal && (document.body.style.overflow = "hidden");
+    !modal && (document.body.style.overflow = "unset");
+  }, [modal]);
+
   if (loading)
     return (
       <LoadingContainer>

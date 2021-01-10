@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 import palette from "../../helpers/palette";
 
 const loading = keyframes`
@@ -54,6 +54,12 @@ export const AbsoluteDiv = styled.div`
     width: 150px;
     z-index: 1000;
   }
+
+  @media (max-width: 767px) {
+    img {
+      width: 200px;
+    }
+  }
 `;
 
 export const BackgroundCircle = styled.div`
@@ -66,6 +72,11 @@ export const BackgroundCircle = styled.div`
   align-self: center;
   opacity: 0.5;
   z-index: 1;
+
+  @media (max-width: 767px) {
+    height: 200px;
+    width: 200px;
+  }
 `;
 
 export const WrapperProfile = styled.div`
@@ -110,6 +121,10 @@ export const WrapperTypes = styled.div`
 
 export const DescriptionWrapper = styled.div`
   margin: 5rem 2rem 0;
+
+  @media (max-width: 767px) {
+    margin: 7rem 2rem 0;
+  }
 `;
 
 export const BiologyDiv = styled.div`
@@ -135,14 +150,22 @@ export const NavWrapper = styled.div`
   align-items: center;
 
   button {
-    background: transparent;
-    border: none;
+  }
+`;
 
-    &:hover,
-    &:focus {
-      color: ${(props) => (props.type ? palette[props.type] : "#b44")};
-      outline: none;
-    }
+export const NavButton = styled.button`
+  background: transparent;
+  border: none;
+  padding: 0 0 1rem;
+  color: ${(props) => (props.isFocused ? palette[props.type] : "black")};
+  border-bottom: ${(props) =>
+    props.isFocused ? css`2px solid ${palette[props.type]}` : ""};
+  font-weight: ${(props) => (props.isFocused ? "bold" : "")};
+  transition: ease 0.1s;
+
+  &:hover,
+  &:focus {
+    outline: none;
   }
 `;
 

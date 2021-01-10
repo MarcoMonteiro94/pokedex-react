@@ -8,6 +8,7 @@ import {
   DescriptionWrapper,
   BiologyDiv,
   NavWrapper,
+  NavButton,
   WrapperTitle,
   WrapperTypes,
   Pokeball,
@@ -99,12 +100,28 @@ const PokemonModal = ({ pokemon, setModal }) => {
                 />
               </AbsoluteDiv>
               <DescriptionWrapper>
-                <NavWrapper type={type}>
-                  <button onClick={() => setNavPage(0)} autoFocus>
+                <NavWrapper active={navPage}>
+                  <NavButton
+                    type={type}
+                    isFocused={navPage === 0 ? true : false}
+                    onClick={() => setNavPage(0)}
+                  >
                     About
-                  </button>
-                  <button onClick={() => setNavPage(1)}>Evolution</button>
-                  <button onClick={() => setNavPage(2)}>Status</button>
+                  </NavButton>
+                  <NavButton
+                    type={type}
+                    onClick={() => setNavPage(1)}
+                    isFocused={navPage === 1 ? true : false}
+                  >
+                    Evolution
+                  </NavButton>
+                  <NavButton
+                    type={type}
+                    onClick={() => setNavPage(2)}
+                    isFocused={navPage === 2 ? true : false}
+                  >
+                    Status
+                  </NavButton>
                 </NavWrapper>
                 {navPage === 2 ? (
                   <div>2</div>

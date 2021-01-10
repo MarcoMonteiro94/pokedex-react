@@ -13,6 +13,7 @@ const loading = keyframes`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 3rem;
 `;
 
 export const SearchWrapper = styled.div`

@@ -22,15 +22,45 @@ export const Container = styled.li`
 
 export const PokeWrapper = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 1rem;
   align-items: center;
   position: relative;
   z-index: 2;
-  gap: 4rem;
+`;
+
+export const InfoWrapper = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.55rem;
+  padding: 1rem 0 1rem;
 
   p {
     color: white;
+    opacity: 0.5;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  h2 {
     font-weight: 700;
     font-size: 1.5rem;
+    margin: 0;
+  }
+
+  div {
+    display: flex;
+
+    h3 {
+      margin: 0;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 0.25rem 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 1rem;
+      margin-right: 1rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
   }
 `;

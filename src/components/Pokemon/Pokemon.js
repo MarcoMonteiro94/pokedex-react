@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, PokeWrapper } from "./styles";
+import { Container, PokeWrapper, InfoWrapper } from "./styles";
 import { ReactComponent as PokeDetail } from "../../assets/pokedetail.svg";
 
 const Pokemon = ({ pokemon, setModal }) => {
@@ -16,7 +16,22 @@ const Pokemon = ({ pokemon, setModal }) => {
   return (
     <Container onClick={handleClick} type={type}>
       <PokeWrapper>
-        <p>{pokemon.name}</p>
+        <InfoWrapper>
+          <p>
+            #
+            {pokemon.id < 10
+              ? `00${pokemon.id}`
+              : pokemon.id < 100
+              ? `0${pokemon.id}`
+              : pokemon.id}
+          </p>
+          <h2>{pokemon.name}</h2>
+          <div>
+            {pokemon.types.map((pokemon) => (
+              <h3 key={pokemon.type}>{pokemon.type.name}</h3>
+            ))}
+          </div>
+        </InfoWrapper>
         <img src={pokemon.sprites.front_default} alt={pokemon.name} />
       </PokeWrapper>
       <PokeDetail
